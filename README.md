@@ -1,0 +1,162 @@
+﻿## 🖥️ PC Builder — Montador de Computadores
+
+## 📌 Sobre o Projeto
+
+O **PC Builder** é um sistema web desenvolvido com o objetivo de auxiliar usuários na montagem de computadores personalizados.
+
+A plataforma permite selecionar componentes de hardware, consultar preços, verificar a compatibilidade entre as peças e calcular automaticamente o orçamento total da configuração.
+
+O projeto está sendo desenvolvido como atividade acadêmica, aplicando conhecimentos de desenvolvimento web, banco de dados, engenharia de software e controle de versão.
+
+## 🎯 Objetivos
+
+- Facilitar a montagem de computadores personalizados.
+- Permitir a seleção de diferentes componentes de hardware.
+- Calcular automaticamente o orçamento de uma configuração.
+- Auxiliar na escolha de peças compatíveis.
+- Disponibilizar informações sobre os componentes cadastrados.
+
+## ⚙️ Funcionalidades
+
+- [ ] Catálogo de componentes de hardware.
+- [ ] Pesquisa e filtragem de peças.
+- [ ] Seleção de componentes para montagem do PC.
+- [ ] Cálculo automático do orçamento.
+- [ ] Verificação de compatibilidade entre componentes.
+- [ ] Cadastro de componentes.
+- [ ] Edição e exclusão de componentes.
+- [ ] Autenticação de usuários.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Python:** Linguagem de programação utilizada no backend.
+- **Django:** Framework utilizado no desenvolvimento web.
+- **HTML5:** Estruturação das páginas.
+- **CSS3:** Estilização das interfaces.
+- **JavaScript:** Interatividade das páginas.
+- **SQLite:** Banco de dados.
+- **Git e GitHub:** Controle de versão e colaboração.
+
+## 📁 Estrutura do Projeto
+
+`	ext
+projeto/
+│
+├── manage.py
+│
+├── projeto/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── templates/
+│   │   ├── base.html
+│   │   └── fragments/
+│   │       ├── navbar.html
+│   │       └── footer.html
+│   │
+│   └── static/
+│       ├── css/
+│       │   └── style.css
+│       ├── js/
+│       └── img/
+│
+├── core/
+│   ├── migrations/
+│   ├── templates/
+│   │   └── core/
+│   │       ├── index.html
+│   │       └── login.html
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+│
+├── .gitignore
+└── README.md
+`
+
+## 🚀 Como executar o projeto
+
+### 1. Clonar o repositório
+
+`ash
+git clone URL_DO_REPOSITORIO
+`
+
+### 2. Entrar na pasta do projeto
+
+`ash
+cd NOME_DA_PASTA
+`
+
+### 3. Criar um ambiente virtual
+
+`ash
+python -m venv venv
+`
+
+### 4. Ativar o ambiente virtual
+
+Windows:
+
+`ash
+venv\Scripts\activate
+`
+
+Linux:
+
+`ash
+source venv/bin/activate
+`
+
+### 5. Instalar as dependências
+
+`ash
+pip install django
+`
+
+### 6. Executar as migrações
+
+`ash
+python manage.py migrate
+`
+
+### 7. Iniciar o servidor
+
+`ash
+python manage.py runserver
+`
+
+### 8. Acessar o sistema
+
+Abra o navegador e acesse:
+
+http://127.0.0.1:8000/
+
+## 📋 Gerenciamento do Projeto
+
+O desenvolvimento utiliza uma metodologia ágil baseada no Scrum, com organização das atividades por meio de um quadro Kanban no GitHub Projects.
+
+As tarefas são organizadas nas seguintes etapas:
+
+- **Backlog:** tarefas planejadas.
+- **To Do:** tarefas a serem realizadas.
+- **In Progress:** tarefas em desenvolvimento.
+- **Done:** tarefas concluídas.
+
+## 👥 Equipe de Desenvolvimento
+
+| Integrante | Responsabilidade |
+
+| Marlon Kevin Sampaio | Desenvolvimento |
+| Thiago Alves Charles | Desenvolvimento |
+
+## 📅 Cronograma
+
+- **3º Bimestre:** Planejamento, prototipação, frontend e modelagem do banco de dados.
+- **4º Bimestre:** Implementação das funcionalidades, integração, testes e documentação final.
+
+## 📚 Projeto Acadêmico
+
+Projeto desenvolvido como atividade avaliativa da disciplina, com o objetivo de aplicar conhecimentos de programação, desenvolvimento web, banco de dados, Git e metodologias ágeis.
