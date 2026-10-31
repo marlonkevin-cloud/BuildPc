@@ -1,34 +1,37 @@
-{% load static %}
-
-<!DOCTYPE html>
-<html lang="pt-br">
+{% load static %}<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>{% block titulo %}BuildPc{% endblock %}</title>
-
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-    {% block estilo %}
-    {% endblock %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}SetupForge{% endblock %} | Monte seu PC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-
 <body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="{% url 'core:index' %}" class="logo">Setup<span>Forge</span></a>
+      <nav class="nav">
+        <a href="{% url 'core:index' %}">Início</a>
+        <a href="{% url 'core:montagem' %}" class="nav__destaque">Montar setup</a>
+        {% if user.is_authenticated %}
+          <a href="{% url 'core:perfil' %}" class="nav__perfil">Meu perfil</a>
+        {% else %}
+          <a href="{% url 'core:login' %}" class="nav__perfil">Entrar / Cadastrar</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
 
-    {% include 'fragments/header.html' %}
+  <main>
+    {% block content %}{% endblock %}
+  </main>
 
-    {% include 'fragments/nav.html' %}
-
-    <main>
-        {% block conteudo %}
-        {% endblock %}
-    </main>
-
-    {% include 'fragments/footer.html' %}
-
-    {% block scripts %}
-    {% endblock %}
-
+  <footer class="footer">
+    <div class="container">
+      <p>SetupForge &copy; 2026 — Monte o computador ideal, peça por peça.</p>
+    </div>
+  </footer>
 </body>
 </html>

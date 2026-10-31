@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Início{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="container hero__inner">
+    <p class="eyebrow">Para iniciantes e entusiastas</p>
+    <h1>Monte o PC dos seus sonhos <span class="gradiente">sem complicação</span></h1>
+    <p class="hero__texto">Escolha cada peça com ajuda de etiquetas claras como <strong>custo-benefício</strong> e <strong>mais vendida</strong>, compare preços e salve seus setups no seu perfil.</p>
+    <div class="hero__acoes">
+      <a href="{% url 'core:montagem' %}" class="btn btn--primario">Começar a montar</a>
+      <a href="{% url 'core:login' %}" class="btn btn--secundario">Criar conta grátis</a>
+    </div>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="container">
+    <h2 class="secao__titulo">Como funciona</h2>
+    <div class="passos">
+      <div class="passo"><span class="passo__num">1</span><h3>Escolha o tipo de peça</h3><p>Processador, placa de vídeo, memória... navegue por categoria.</p></div>
+      <div class="passo"><span class="passo__num">2</span><h3>Compare as opções</h3><p>Veja nome, marca, preço e etiquetas que explicam cada peça.</p></div>
+      <div class="passo"><span class="passo__num">3</span><h3>Salve seu setup</h3><p>Guarde suas montagens no perfil e volte quando quiser.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="secao secao--alt">
+  <div class="container">
+    <h2 class="secao__titulo">Principais funcionalidades</h2>
+    <div class="cards">
+      <article class="card"><div class="card__icone">🧩</div><h3>Montagem por categoria</h3><p>Organizamos as peças por tipo para você não se perder.</p></article>
+      <article class="card"><div class="card__icone">🏷️</div><h3>Etiquetas inteligentes</h3><p>"Custo-benefício", "mais vendida", "top de mercado": entenda tudo de relance.</p></article>
+      <article class="card"><div class="card__icone">💰</div><h3>Preços visíveis</h3><p>Acompanhe o valor de cada componente antes de decidir.</p></article>
+      <article class="card"><div class="card__icone">👤</div><h3>Perfil com seus setups</h3><p>Todos os computadores que você montou, em um só lugar.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="container cta">
+    <h2>Pronto para começar?</h2>
+    <p>Não precisa entender de hardware. A gente te guia.</p>
+    <a href="{% url 'core:montagem' %}" class="btn btn--primario">Ir para a montagem</a>
+  </div>
+</section>
+{% endblock %}
