@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}Montar setup{% endblock %}
+{% block content %}
+<section class="secao">
+  <div class="container">
+    <h1 class="secao__titulo">Monte seu setup</h1>
+    <p class="muted centro">Clique em um tipo de peça para ver as melhores opções.</p>
+
+    <form method="get" action="{% url 'core:montagem' %}" class="montagem">
+      <input type="radio" name="aba" id="aba-cpu" class="aba-radio" checked>
+      <input type="radio" name="aba" id="aba-gpu" class="aba-radio">
+      <input type="radio" name="aba" id="aba-ram" class="aba-radio">
+      <input type="radio" name="aba" id="aba-ssd" class="aba-radio">
+      <input type="radio" name="aba" id="aba-fonte" class="aba-radio">
+
+      <div class="abas">
+        <label for="aba-cpu">🧠 Processador</label>
+        <label for="aba-gpu">🎮 Placa de vídeo</label>
+        <label for="aba-ram">⚡ Memória RAM</label>
+        <label for="aba-ssd">💾 Armazenamento</label>
+        <label for="aba-fonte">🔌 Fonte</label>
+      </div>
+
+      <div class="painel painel-cpu">
+        <label class="peca"><input type="radio" name="cpu" value="r5-7600"><div><h3>Ryzen 5 7600</h3><p class="marca">AMD</p><div class="tags"><span class="tag tag--cb">Custo-benefício</span></div></div><span class="preco">R$ 1.199,00</span></label>
+        <label class="peca"><input type="radio" name="cpu" value="i5-14600k"><div><h3>Core i5-14600K</h3><p class="marca">Intel</p><div class="tags"><span class="tag tag--mv">Mais vendida</span></div></div><span class="preco">R$ 1.849,00</span></label>
+        <label class="peca"><input type="radio" name="cpu" value="r7-7800x3d"><div><h3>Ryzen 7 7800X3D</h3><p class="marca">AMD</p><div class="tags"><span class="tag tag--top">Uma das melhores do mercado</span></div></div><span class="preco">R$ 2.599,00</span></label>
+      </div>
+
+      <div class="painel painel-gpu">
+        <label class="peca"><input type="radio" name="gpu" value="rx7600"><div><h3>Radeon RX 7600</h3><p class="marca">AMD</p><div class="tags"><span class="tag tag--cb">Custo-benefício</span></div></div><span class="preco">R$ 1.799,00</span></label>
+        <label class="peca"><input type="radio" name="gpu" value="rtx4060"><div><h3>GeForce RTX 4060</h3><p class="marca">NVIDIA</p><div class="tags"><span class="tag tag--mv">Mais vendida</span></div></div><span class="preco">R$ 2.099,00</span></label>
+        <label class="peca"><input type="radio" name="gpu" value="rtx4080s"><div><h3>GeForce RTX 4080 Super</h3><p class="marca">NVIDIA</p><div class="tags"><span class="tag tag--top">Uma das melhores do mercado</span></div></div><span class="preco">R$ 7.499,00</span></label>
+      </div>
+
+      <div class="painel painel-ram">
+        <label class="peca"><input type="radio" name="ram" value="fury16"><div><h3>Fury Beast 16GB DDR5</h3><p class="marca">Kingston</p><div class="tags"><span class="tag tag--cb">Custo-benefício</span></div></div><span class="preco">R$ 349,00</span></label>
+        <label class="peca"><input type="radio" name="ram" value="vengeance32"><div><h3>Vengeance 32GB DDR5</h3><p class="marca">Corsair</p><div class="tags"><span class="tag tag--mv">Mais vendida</span></div></div><span class="preco">R$ 699,00</span></label>
+        <label class="peca"><input type="radio" name="ram" value="tridentz64"><div><h3>Trident Z5 64GB DDR5</h3><p class="marca">G.Skill</p><div class="tags"><span class="tag tag--top">Uma das melhores do mercado</span></div></div><span class="preco">R$ 1.499,00</span></label>
+      </div>
+
+      <div class="painel painel-ssd">
+        <label class="peca"><input type="radio" name="ssd" value="nv2"><div><h3>NV2 1TB NVMe</h3><p class="marca">Kingston</p><div class="tags"><span class="tag tag--cb">Custo-benefício</span></div></div><span class="preco">R$ 379,00</span></label>
+        <label class="peca"><input type="radio" name="ssd" value="sn770"><div><h3>WD Black SN770 1TB</h3><p class="marca">Western Digital</p><div class="tags"><span class="tag tag--mv">Mais vendida</span></div></div><span class="preco">R$ 449,00</span></label>
+        <label class="peca"><input type="radio" name="ssd" value="990pro"><div><h3>990 Pro 2TB</h3><p class="marca">Samsung</p><div class="tags"><span class="tag tag--top">Uma das melhores do mercado</span></div></div><span class="preco">R$ 1.199,00</span></label>
+      </div>
+
+      <div class="painel painel-fonte">
+        <label class="peca"><input type="radio" name="fonte" value="mwe650"><div><h3>MWE 650W 80+ Bronze</h3><p class="marca">Cooler Master</p><div class="tags"><span class="tag tag--cb">Custo-benefício</span></div></div><span class="preco">R$ 399,00</span></label>
+        <label class="peca"><input type="radio" name="fonte" value="rm750e"><div><h3>RM750e 80+ Gold</h3><p class="marca">Corsair</p><div class="tags"><span class="tag tag--mv">Mais vendida</span></div></div><span class="preco">R$ 699,00</span></label>
+        <label class="peca"><input type="radio" name="fonte" value="focus1000"><div><h3>Focus GX 1000W 80+ Gold</h3><p class="marca">Seasonic</p><div class="tags"><span class="tag tag--top">Uma das melhores do mercado</span></div></div><span class="preco">R$ 1.299,00</span></label>
+      </div>
+
+      <div class="montagem__rodape">
+        <input type="text" name="nome_setup" placeholder="Dê um nome ao seu setup" required>
+        <button type="submit" class="btn btn--primario">Salvar setup</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}
