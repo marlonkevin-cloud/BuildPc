@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Meu perfil{% endblock %}
+{% block content %}
+<section class="secao">
+  <div class="container perfil">
+    <aside class="perfil__info">
+      <div class="avatar">{{ user.first_name|default:"U"|slice:":1" }}</div>
+      <h1>{{ user.get_full_name|default:"Usuário" }}</h1>
+      <dl>
+        <dt>E-mail</dt><dd>{{ user.email|default:"-" }}</dd>
+        <dt>Telefone</dt><dd>{{ user.telefone|default:"-" }}</dd>
+        <dt>Membro desde</dt><dd>{{ user.date_joined|date:"d/m/Y" }}</dd>
+      </dl>
+      <a href="{% url 'core:montagem' %}" class="btn btn--primario btn--bloco">Novo setup</a>
+    </aside>
+
+    <div class="perfil__setups">
+      <h2 class="secao__titulo secao__titulo--esq">Meus setups</h2>
+      {% for setup in setups %}
+        <article class="setup">
+          <header class="setup__topo">
+            <h3>{{ setup.nome }}</h3>
+            <span class="preco">R$ {{ setup.total }}</span>
+          </header>
+          <ul class="setup__pecas">
+            {% for peca in setup.pecas.all %}
+              <li><span>{{ peca.tipo }}</span> {{ peca.nome }} — {{ peca.marca }}</li>
+            {% endfor %}
+          </ul>
+        </article>
+      {% empty %}
+        <article class="setup">
+          <header class="setup__topo"><h3>Setup Gamer (exemplo)</h3><span class="preco">R$ 7.890,00</span></header>
+          <ul class="setup__pecas">
+            <li><span>CPU</span> Ryzen 5 7600 — AMD</li>
+            <li><span>GPU</span> RTX 4060 — NVIDIA</li>
+            <li><span>RAM</span> Fury Beast 32GB DDR5 — Kingston</li>
+            <li><span>SSD</span> 990 Pro 1TB — Samsung</li>
+          </ul>
+        </article>
+        <p class="muted">Você ainda não salvou nenhum setup. O exemplo acima mostra como ele aparecerá.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
